@@ -1,0 +1,22 @@
+
+start_from: ./pretrained/states0_ar.nemo
+resume_from: last
+
+checkpoint_dir: ./checkpoints/exp0
+logs_dir: ./logs/exp0
+
+# QASR
+wav_dir: I:/speech/qasr/qasr_wav_v1.0
+training_labels: ./data/train_segments_nonumlat.txt
+validation_labels: ./data/val_segments_nonumlat.txt
+
+batch_size: 16
+val_batch_size: 16
+
+# pl.Trainer options
+max_epochs: 3
+val_check_interval: 5000
+log_every_n_steps: 5
+
+# checkpointing
+n_save_ckpt: 100
